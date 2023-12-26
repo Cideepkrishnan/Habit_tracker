@@ -2,15 +2,12 @@
 
 A new Flutter project.
 
-## Getting Started
+![Screenshot_1703578806](https://github.com/Cideepkrishnan/Habit_tracker/assets/145324710/77b4fb0e-ef8a-4bb3-b2f7-e1684d54e7cb)
 
-This project is a starting point for a Flutter application.
+![Screenshot_1703578807](https://github.com/Cideepkrishnan/Habit_tracker/assets/145324710/9428bf78-283f-403b-ba76-27c09f6afebb)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Screenshot_1703578810](https://github.com/Cideepkrishnan/Habit_tracker/assets/145324710/db844234-0578-4166-bea1-4d9e587c5343)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+![Screenshot_1703578814](https://github.com/Cideepkrishnan/Habit_tracker/assets/145324710/838ea972-2946-4b3e-b068-7a1a28d9ffaf)
