@@ -19,7 +19,7 @@ class _MyListTileState extends State<MyListTile> {
       width: double.infinity,
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.blue.shade50,
+        color: Colors.blue.shade200,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(
@@ -38,7 +38,7 @@ class _MyListTileState extends State<MyListTile> {
               ),
               IconButton(
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => TaskEditor(
@@ -48,7 +48,7 @@ class _MyListTileState extends State<MyListTile> {
                   },
                   icon: Icon(
                     Icons.edit,
-                    color: Colors.green,
+                    color: Color.fromARGB(255, 46, 83, 47),
                   )),
               IconButton(
                   onPressed: () {

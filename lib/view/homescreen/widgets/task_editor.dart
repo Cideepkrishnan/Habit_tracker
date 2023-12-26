@@ -16,15 +16,16 @@ class _TaskEditorState extends State<TaskEditor> {
     TextEditingController _taskTitle = TextEditingController(
         text: widget.task == null ? null : widget.task!.title!);
     TextEditingController _taskNote = TextEditingController(
-        text: widget.task == null ? null : widget.task!.title!);
+        text: widget.task == null ? null : widget.task!.note!);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
         title: Text(
-          widget.task == null ? "Add a new task" : "update your task",
-          style: TextStyle(color: Colors.black),
+          widget.task == null ? "Add a new Task" : "Update your Task",
+          style: TextStyle(
+              color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
         ),
         elevation: 0,
       ),
@@ -48,7 +49,7 @@ class _TaskEditorState extends State<TaskEditor> {
               controller: _taskTitle,
               decoration: InputDecoration(
                   filled: true,
-                  fillColor: Colors.blue.shade100.withAlpha(75),
+                  fillColor: Colors.blue.shade200.withAlpha(75),
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
                     borderRadius: BorderRadius.circular(8),
@@ -75,7 +76,7 @@ class _TaskEditorState extends State<TaskEditor> {
               controller: _taskNote,
               decoration: InputDecoration(
                   filled: true,
-                  fillColor: Colors.blue.shade100.withAlpha(75),
+                  fillColor: Colors.blue.shade200.withAlpha(75),
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
                     borderRadius: BorderRadius.circular(8),
@@ -102,14 +103,14 @@ class _TaskEditorState extends State<TaskEditor> {
                       widget.task!.title = newTask.title;
                       widget.task!.note = newTask.note;
                       widget.task!.save();
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => HomeScreen(),
                           ));
                     } else {
                       await taskbox.add(newTask);
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => HomeScreen(),
