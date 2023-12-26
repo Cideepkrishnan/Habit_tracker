@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:habit_tracker/model/tesk_model.dart';
 import 'package:habit_tracker/view/homescreen/homescreen.dart';
 import 'package:hive/hive.dart';
@@ -22,11 +23,13 @@ class _TaskEditorState extends State<TaskEditor> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
-        title: Text(
-          widget.task == null ? "Add a new Task" : "Update your Task",
-          style: TextStyle(
-              color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-        ),
+        title: Text(widget.task == null ? "Add a new Task" : "Update your Task",
+            style: GoogleFonts.robotoSlab(
+              textStyle: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            )),
         elevation: 0,
       ),
       body: Padding(
@@ -35,13 +38,13 @@ class _TaskEditorState extends State<TaskEditor> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Your task title",
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            Text("Your task title",
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
             SizedBox(
               height: 12,
             ),
@@ -54,18 +57,18 @@ class _TaskEditorState extends State<TaskEditor> {
                     borderSide: BorderSide.none,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  hintText: "Your title"),
+                  hintText: "Title"),
             ),
             SizedBox(
               height: 40,
             ),
-            Text(
-              "Your task Note",
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            Text("Your task Note",
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
             SizedBox(
               height: 12,
             ),
@@ -118,13 +121,14 @@ class _TaskEditorState extends State<TaskEditor> {
                     }
                   },
                   fillColor: Colors.blueAccent.shade400,
-                  child: Text(
-                    widget.task == null ? "Add new Task" : "Update task",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
+                  child:
+                      Text(widget.task == null ? "Add new Task" : "Update task",
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          )),
                 ),
               ),
             ))

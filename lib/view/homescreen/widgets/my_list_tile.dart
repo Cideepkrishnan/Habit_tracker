@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:habit_tracker/model/tesk_model.dart';
 import 'package:habit_tracker/view/homescreen/widgets/task_editor.dart';
 
@@ -28,36 +29,45 @@ class _MyListTileState extends State<MyListTile> {
           Row(
             children: [
               Expanded(
-                child: Text(
-                  widget.task.title!,
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Text(widget.task.title!,
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+              ),
+              // Edit and delete functions
+              InkWell(
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TaskEditor(
+                          task: widget.task,
+                        ),
+                      ));
+                },
+                // here we use an image for edit
+                child: Container(
+                  height: 18,
+                  child: Image.asset("assets/image/pencil (2).png"),
                 ),
               ),
-              IconButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TaskEditor(
-                            task: widget.task,
-                          ),
-                        ));
-                  },
-                  icon: Icon(
-                    Icons.edit,
-                    color: Color.fromARGB(255, 46, 83, 47),
-                  )),
-              IconButton(
-                  onPressed: () {
-                    widget.task.delete();
-                  },
-                  icon: Icon(
-                    Icons.delete,
-                    color: Colors.red,
-                  ))
+              SizedBox(
+                width: 20,
+              ),
+
+              InkWell(
+                onTap: () {
+                  widget.task.delete();
+                },
+                // here we use an image for delete
+                child: Container(
+                  height: 22,
+                  child: Image.asset("assets/image/delete.png"),
+                ),
+              ),
             ],
           ),
           Divider(
@@ -65,7 +75,12 @@ class _MyListTileState extends State<MyListTile> {
             height: 28,
             thickness: 1.0,
           ),
-          Text(widget.task.note!)
+          Text(
+            widget.task.note!,
+            style: GoogleFonts.poppins(
+                textStyle:
+                    TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+          )
         ],
       ),
     );
